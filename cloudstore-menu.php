@@ -27,11 +27,18 @@ add_hook('ClientAreaPrimaryNavbar', 1, function (MenuItem $primaryNavbar)
         ->setOrder(1);
     $primaryNavbar->addChild('SERVEURS VIRTUELS')
         ->setUri('/index.php?rp=/store/vps-100-africain')
-        ->setOrder(1);
+        ->setOrder(2);
 
     $primaryNavbar->addChild('HEBERGEMENT WEB')
         ->setUri('/index.php?rp=/store/shared-hosting-cpanle')
-        ->setOrder(1);
+        ->setOrder(3);
 
+});
+
+add_hook('ClientAreaPrimarySidebar', 1, function(MenuItem $primarySidebar)
+{
+     if (!is_null($primarySidebar->getChild('Categories'))) {
+        $primarySidebar->removeChild('Categories');
+    }
 });
 ?>
