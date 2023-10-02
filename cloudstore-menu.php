@@ -56,9 +56,8 @@ add_hook('ClientAreaSecondarySidebar', 1, function(MenuItem $secondarySidebar)
      if (!is_null($secondarySidebar->getChild('Categories'))) {
         $secondarySidebar->removeChild('Categories');
     }
-    if (!is_null($actionSidebar->getChild('Actions'))) {
-        $secondarySidebar->removeChild('Categories');
-    }
+    $actionSidebar->getChild('Actions');
+
     $actionSidebar->addChild('Commandez un serveur virtuel')
         ->setUri('/index.php?rp=/store/vps-100-africain')
         ->setOrder(50);
