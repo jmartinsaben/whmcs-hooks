@@ -22,6 +22,22 @@ add_hook('ClientAreaPrimaryNavbar', 1, function (MenuItem $primaryNavbar)
     if (!is_null($primaryNavbar->getChild('Contact Us'))) {
         $primaryNavbar->removeChild('Contact Us');
     }
+    if (!is_null($primaryNavbar->getChild('Services'))) {
+        $primaryNavbar->removeChild('Services');
+    }
+    if (!is_null($primaryNavbar->getChild('Domains'))) {
+        $primaryNavbar->removeChild('Domains');
+    }
+    if (!is_null($primaryNavbar->getChild('Billing'))) {
+        $primaryNavbar->removeChild('Billing');
+    }
+    if (!is_null($primaryNavbar->getChild('Support'))) {
+        $primaryNavbar->removeChild('Support');
+    }
+    if (!is_null($primaryNavbar->getChild('Open Ticket'))) {
+        $primaryNavbar->removeChild('Open Ticket');
+    }
+
     $primaryNavbar->addChild('NOM DE DOMAINE')
         ->setUri('/domainchecker.php')
         ->setOrder(1);
