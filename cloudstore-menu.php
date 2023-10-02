@@ -34,7 +34,9 @@ add_hook('ClientAreaPrimaryNavbar', 1, function (MenuItem $primaryNavbar)
     if (!is_null($primaryNavbar->getChild('Support'))) {
         $primaryNavbar->removeChild('Support');
     }
-   
+    if (!is_null($primaryNavbar->getChild('Open Ticket'))) {
+        $primaryNavbar->removeChild('Open Ticket');
+    }
 
     $primaryNavbar->addChild('NOM DE DOMAINE')
         ->setUri('/domainchecker.php')
@@ -81,7 +83,7 @@ add_hook('ClientAreaPrimarySidebar', 1, function(MenuItem $primarySidebar)
         ->setUri('/serverstatus.php')
         ->setOrder(55);
      $primarySidebar->addChild('Demander du support')
-        ->setUri('/index.php?rp=/store/shared-hosting-cpanle')
+        ->setUri('/submitticket.php')
         ->setOrder(56);
      $primarySidebar->addChild('Nous contacter')
         ->setUri('/contact.php')
