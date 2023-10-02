@@ -56,35 +56,7 @@ add_hook('ClientAreaSecondarySidebar', 1, function(MenuItem $secondarySidebar)
      if (!is_null($secondarySidebar->getChild('Categories'))) {
         $secondarySidebar->removeChild('Categories');
     }
-    $actionSidebar->getChild('Actions');
-
-    $actionSidebar->addChild('Commandez un serveur virtuel')
-        ->setUri('/index.php?rp=/store/vps-100-africain')
-        ->setOrder(50);
-
-    $actionSidebar->addChild('Commandez un hébergement web')
-        ->setUri('/index.php?rp=/store/shared-hosting-cpanle')
-        ->setOrder(51);
-
-    $actionSidebar->addChild('Accédez à un ticket')
-        ->setUri('/supporttickets.php')
-        ->setOrder(52);
-
-    $actionSidebar->addChild('Accédez à mon espace client')
-        ->setUri('/clientarea.php')
-        ->setOrder(53);
-    $actionSidebar->addChild('Payer une facture')
-        ->setUri('/clientarea.php?action=invoices')
-        ->setOrder(54);
-    $actionSidebar->addChild("Voir l'état du réseau")
-        ->setUri('/serverstatus.php')
-        ->setOrder(55);
-    $actionSidebar->addChild('Demander du support')
-        ->setUri('/submitticket.php')
-        ->setOrder(56);
-    $actionSidebar->addChild('Nous contacter')
-        ->setUri('/contact.php')
-        ->setOrder(57);
+   
 });
 
 
