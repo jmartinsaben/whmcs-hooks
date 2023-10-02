@@ -34,9 +34,7 @@ add_hook('ClientAreaPrimaryNavbar', 1, function (MenuItem $primaryNavbar)
     if (!is_null($primaryNavbar->getChild('Support'))) {
         $primaryNavbar->removeChild('Support');
     }
-    if (!is_null($primaryNavbar->getChild('Open Ticket'))) {
-        $primaryNavbar->removeChild('Open Ticket');
-    }
+   
 
     $primaryNavbar->addChild('NOM DE DOMAINE')
         ->setUri('/domainchecker.php')
@@ -56,5 +54,38 @@ add_hook('ClientAreaSecondarySidebar', 1, function(MenuItem $secondarySidebar)
      if (!is_null($secondarySidebar->getChild('Categories'))) {
         $secondarySidebar->removeChild('Categories');
     }
+});
+
+add_hook('ClientAreaPrimarySidebar', 1, function(MenuItem $primarySidebar)
+{
+
+     $primarySidebar->addChild('Commandez un serveur virtuel')
+        ->setUri('/index.php?rp=/store/vps-100-africain')
+        ->setOrder(50);
+
+     $primarySidebar->addChild('Commandez un hébergement web')
+        ->setUri('/index.php?rp=/store/shared-hosting-cpanle')
+        ->setOrder(51);
+
+     $primarySidebar->addChild('Accédez à un ticket')
+        ->setUri('/supporttickets.php')
+        ->setOrder(52);
+
+     $primarySidebar->addChild('Accédez à mon espace client')
+        ->setUri('/clientarea.php')
+        ->setOrder(53);
+     $primarySidebar->addChild('Payer une facture')
+        ->setUri('/clientarea.php?action=invoices')
+        ->setOrder(54);
+     $primarySidebar->addChild("Voir l'état du réseau")
+        ->setUri('/serverstatus.php')
+        ->setOrder(55);
+     $primarySidebar->addChild('Demander du support')
+        ->setUri('/index.php?rp=/store/shared-hosting-cpanle')
+        ->setOrder(56);
+     $primarySidebar->addChild('Nous contacter')
+        ->setUri('/contact.php')
+        ->setOrder(57);
+
 });
 ?>
