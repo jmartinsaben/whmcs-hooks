@@ -51,10 +51,10 @@ add_hook('ClientAreaPrimaryNavbar', 1, function (MenuItem $primaryNavbar)
 
 });
 
-add_hook('ClientAreaPrimarySidebar', 1, function(MenuItem $primarySidebar)
+add_hook('ClientAreaSecondarySidebar', 1, function(MenuItem $secondarySidebar)
 {
-     if (!is_null($primarySidebar->getChild('Categories'))) {
-        $primarySidebar->removeChild('Categories');
+     if (!is_null($secondarySidebar->getChild('Categories'))) {
+        $secondarySidebar->removeChild('Categories');
     }
 });
 ?>
