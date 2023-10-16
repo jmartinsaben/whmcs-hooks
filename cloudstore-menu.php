@@ -53,6 +53,50 @@ add_hook('ClientAreaPrimaryNavbar', 1, function (MenuItem $primaryNavbar)
 
 add_hook('ClientAreaSecondarySidebar', 1, function(MenuItem $secondarySidebar)
 {
+    $secondarySidebar->addChild('Aide', array(
+        'label' => 'Aide',
+        'uri' => '#',
+        'icon' => 'fa fa-hands-helping')
+    );
+    $helpSidebar = $secondarySidebar.getChild('Aide');
+    $helpSidebar.addChild('Support', array(
+        'label'=> 'Support',
+        'uri'=> '/supporttickets.php',
+        'order' => '1',
+        'icon' => 'fa-solid fa-user-headset'
+    ));
+    $helpSidebar.addChild('Contact', array(
+        'label'=> 'Nous Contacter',
+        'uri'=> '/contact.php',
+        'order' => '2',
+        'icon' => 'fa-solid fa-phone'
+    ));
+    $helpSidebar.addChild('FAQ', array(
+        'label'=> 'FAQ',
+        'uri'=> '/knowledgebase.php',
+        'order' => '3',
+        'icon' => 'fa-solid fa-question'
+    ));
+    $helpSidebar.addChild('espace client', array(
+        'label'=> 'Mon espace client',
+        'uri'=> '/clientarea.php',
+        'order' => '4',
+        'icon' => 'fa fa-user'
+    ));
+    $helpSidebar.addChild('ticket', array(
+        'label'=> 'Accedez à un ticket',
+        'uri'=> '/viewticket.php',
+        'order' => '5',
+        'icon' => 'fa fa-user'
+    ));
+
+    $helpSidebar.addChild('Tout les produits', array(
+        'label'=> 'Tous les produits',
+        'uri'=> '/',
+        'order' => '5',
+        'icon' => 'fa fa-user'
+    ));
+
     if (!is_null($secondarySidebar->getChild('Categories'))) {
         $secondarySidebar->removeChild('Categories');
     }
@@ -66,14 +110,7 @@ add_hook('ClientAreaSecondarySidebar', 1, function(MenuItem $secondarySidebar)
             ->addChild('Commandez un hébergement web')
             ->setUri('/index.php?rp=/store/shared-hosting-cpanle')
             ->setOrder(51);
-        $secondarySidebar->getChild('Actions')
-            ->addChild('Accédez à un ticket')
-            ->setUri('/supporttickets.php')
-            ->setOrder(52);
-        $secondarySidebar->getChild('Actions')
-            ->addChild('Accédez à mon espace client')
-            ->setUri('/clientarea.php')
-            ->setOrder(53);
+
         $secondarySidebar->getChild('Actions')
             ->addChild('Payer une facture')
             ->setUri('/clientarea.php?action=invoices')
@@ -82,14 +119,7 @@ add_hook('ClientAreaSecondarySidebar', 1, function(MenuItem $secondarySidebar)
             ->addChild("Voir l'état du réseau")
             ->setUri('/serverstatus.php')
             ->setOrder(55);
-        $secondarySidebar->getChild('Actions')
-            ->addChild('Demander du support')
-            ->setUri('/submitticket.php')
-            ->setOrder(56);
-        $secondarySidebar->getChild('Actions')
-            ->addChild('Nous contacter')
-            ->setUri('/contact.php')
-            ->setOrder(57);
+
     }
 });
 
