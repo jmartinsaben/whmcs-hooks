@@ -58,39 +58,39 @@ add_hook('ClientAreaSecondarySidebar', 1, function(MenuItem $secondarySidebar)
         'uri' => '#',
         'icon' => 'fa fa-hands-helping')
     );
-    $helpSidebar = $secondarySidebar.getChild('Aide');
-    $helpSidebar.addChild('Support', array(
+    $helpSidebar = $secondarySidebar->getChild('Aide');
+    $helpSidebar->addChild('Support', array(
         'label'=> 'Support',
         'uri'=> '/supporttickets.php',
         'order' => '1',
         'icon' => 'fa-solid fa-user-headset'
     ));
-    $helpSidebar.addChild('Contact', array(
+    $helpSidebar->addChild('Contact', array(
         'label'=> 'Nous Contacter',
         'uri'=> '/contact.php',
         'order' => '2',
         'icon' => 'fa-solid fa-phone'
     ));
-    $helpSidebar.addChild('FAQ', array(
+    $helpSidebar->addChild('FAQ', array(
         'label'=> 'FAQ',
         'uri'=> '/knowledgebase.php',
         'order' => '3',
         'icon' => 'fa-solid fa-question'
     ));
-    $helpSidebar.addChild('espace client', array(
+    $helpSidebar->addChild('espace client', array(
         'label'=> 'Mon espace client',
         'uri'=> '/clientarea.php',
         'order' => '4',
         'icon' => 'fa fa-user'
     ));
-    $helpSidebar.addChild('ticket', array(
+    $helpSidebar->addChild('ticket', array(
         'label'=> 'Accedez à un ticket',
         'uri'=> '/viewticket.php',
         'order' => '5',
         'icon' => 'fa fa-user'
     ));
 
-    $helpSidebar.addChild('Tout les produits', array(
+    $helpSidebar->addChild('Tout les produits', array(
         'label'=> 'Tous les produits',
         'uri'=> '/',
         'order' => '5',
