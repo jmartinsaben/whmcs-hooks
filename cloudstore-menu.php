@@ -83,18 +83,12 @@ add_hook('ClientAreaSecondarySidebar', 1, function(MenuItem $secondarySidebar)
         'order' => '4',
         'icon' => 'fa fa-user'
     ));
-    $helpSidebar->addChild('ticket', array(
-        'label'=> 'Accedez à un ticket',
-        'uri'=> '/viewticket.php',
-        'order' => '5',
-        'icon' => 'fa fa-user'
-    ));
 
     $helpSidebar->addChild('Tout les produits', array(
         'label'=> 'Tous les produits',
         'uri'=> '/',
-        'order' => '5',
-        'icon' => 'fa fa-user'
+        'order' => '6',
+        'icon' => 'fa-solid fa-hand-holding-heart'
     ));
 
     if (!is_null($secondarySidebar->getChild('Categories'))) {
