@@ -53,47 +53,9 @@ add_hook('ClientAreaPrimaryNavbar', 1, function (MenuItem $primaryNavbar)
 
 add_hook('ClientAreaSecondarySidebar', 1, function(MenuItem $secondarySidebar)
 {
-    $secondarySidebar->addChild('Aide', array(
-        'label' => 'Aide',
-        'uri' => '#',
-        'icon' => 'fa fa-hands-helping')
-    );
-    $helpSidebar = $secondarySidebar->getChild('Aide');
-    $helpSidebar->addChild('Support', array(
-        'label'=> 'Support',
-        'uri'=> '/supporttickets.php',
-        'order' => '1',
-        'icon' => 'fa-solid fa-user-headset'
-    ));
-    $helpSidebar->addChild('Contact', array(
-        'label'=> 'Nous Contacter',
-        'uri'=> '/contact.php',
-        'order' => '2',
-        'icon' => 'fa-solid fa-phone'
-    ));
-    $helpSidebar->addChild('FAQ', array(
-        'label'=> 'FAQ',
-        'uri'=> '/knowledgebase.php',
-        'order' => '3',
-        'icon' => 'fa-solid fa-question'
-    ));
-    $helpSidebar->addChild('espace client', array(
-        'label'=> 'Mon espace client',
-        'uri'=> '/clientarea.php',
-        'order' => '4',
-        'icon' => 'fa fa-user'
-    ));
 
-    $helpSidebar->addChild('Tout les produits', array(
-        'label'=> 'Tous les produits',
-        'uri'=> '/',
-        'order' => '6',
-        'icon' => 'fa-solid fa-hand-holding-heart'
-    ));
 
-    if (!is_null($secondarySidebar->getChild('Categories'))) {
-        $secondarySidebar->removeChild('Categories');
-    }
+
     if (!is_null($secondarySidebar->getChild('Actions'))) {
 
         $secondarySidebar->getChild('Actions')
@@ -114,6 +76,47 @@ add_hook('ClientAreaSecondarySidebar', 1, function(MenuItem $secondarySidebar)
             ->setUri('/serverstatus.php')
             ->setOrder(55);
 
+    }
+    if (!is_null($secondarySidebar->getChild('Categories'))) {
+        $secondarySidebar->removeChild('Categories');
+
+        $secondarySidebar->addChild('Aide', array(
+            'label' => 'Aide',
+            'uri' => '#',
+            'icon' => 'fa fa-hands-helping')
+        );
+        $helpSidebar = $secondarySidebar->getChild('Aide');
+        $helpSidebar->addChild('Support', array(
+            'label'=> 'Support',
+            'uri'=> '/supporttickets.php',
+            'order' => '1',
+            'icon' => 'fa-solid fa-user-headset'
+        ));
+        $helpSidebar->addChild('Contact', array(
+            'label'=> 'Nous Contacter',
+            'uri'=> '/contact.php',
+            'order' => '2',
+            'icon' => 'fa-solid fa-phone'
+        ));
+        $helpSidebar->addChild('FAQ', array(
+            'label'=> 'FAQ',
+            'uri'=> '/knowledgebase.php',
+            'order' => '3',
+            'icon' => 'fa-solid fa-question'
+        ));
+        $helpSidebar->addChild('espace client', array(
+            'label'=> 'Mon espace client',
+            'uri'=> '/clientarea.php',
+            'order' => '4',
+            'icon' => 'fa fa-user'
+        ));
+
+        $helpSidebar->addChild('Tout les produits', array(
+            'label'=> 'Tous les produits',
+            'uri'=> '/',
+            'order' => '6',
+            'icon' => 'fa-solid fa-hand-holding-heart'
+        ));
     }
 });
 
