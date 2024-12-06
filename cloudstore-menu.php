@@ -49,6 +49,10 @@ add_hook('ClientAreaPrimaryNavbar', 1, function (MenuItem $primaryNavbar)
         ->setUri('/index.php?rp=/store/shared-hosting-cpanle')
         ->setOrder(3);
 
+    $primaryNavbar->addChild('OWNCLOUD')
+    ->setUri('/index.php?rp=/store/owncloud')
+    ->setOrder(4);
+
 });
 
 add_hook('ClientAreaSecondarySidebar', 1, function(MenuItem $secondarySidebar)
